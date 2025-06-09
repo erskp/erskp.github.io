@@ -13,10 +13,10 @@
         }
 
         body {
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #ffffff;
             min-height: 100vh;
         }
 
@@ -27,12 +27,12 @@
         }
 
         .profile-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: #ffffff;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
             overflow: hidden;
             transition: transform 0.3s ease;
+            border: 1px solid #f0f0f0;
         }
 
         .profile-card:hover {
@@ -40,7 +40,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 60px 0;
             text-align: center;
@@ -63,9 +63,9 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.2);
+            border: 5px solid rgba(255, 255, 255, 0.3);
             margin: 0 auto 20px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -110,7 +110,7 @@
         }
 
         .contact-item:hover {
-            color: #4ecdc4;
+            color: #ff6b6b;
             transform: translateY(-2px);
         }
 
@@ -152,7 +152,7 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 2px;
         }
 
@@ -165,41 +165,133 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .skill-item {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 20px;
-            border-radius: 15px;
-            border-left: 4px solid #667eea;
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 2px;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            -webkit-mask-composite: xor;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-item:hover::before {
+            opacity: 1;
         }
 
         .skill-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 45px rgba(102, 126, 234, 0.25);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
         .skill-name {
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
             color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-name::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            flex-shrink: 0;
+        }
+
+        .skill-percentage {
+            font-weight: 700;
+            font-size: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
         }
 
         .skill-bar {
-            background: #e9ecef;
-            height: 8px;
-            border-radius: 4px;
+            background: linear-gradient(135deg, #f0f2f8 0%, #e6e9f2 100%);
+            height: 12px;
+            border-radius: 20px;
             overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .skill-progress {
             height: 100%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 4px;
-            transition: width 1s ease;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.4) 50%, 
+                transparent 100%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .skill-description {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover .skill-description {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .projects-grid {
@@ -209,17 +301,17 @@
         }
 
         .project-card {
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f9f9ff 100%);
             border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
             transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
+            border: 1px solid #e8ecff;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
         }
 
         .project-title {
@@ -517,72 +609,4 @@
                                 <span class="tech-tag">Chart.js</span>
                                 <span class="tech-tag">APIs</span>
                                 <span class="tech-tag">CSS Grid</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class="fab fa-github"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h2 class="section-title">Let's Connect</h2>
-                    <div class="social-links">
-                        <a href="https://github.com/yourusername" class="social-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/yourusername" class="social-link" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://dribbble.com/yourusername" class="social-link" target="_blank">
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                        <a href="mailto:your.email@example.com" class="social-link">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <button class="floating-btn" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script>
-        // Animate skill bars when they come into view
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-progress');
-                    skillBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 200);
-                    });
-                }
-            });
-        }, observerOptions);
-
-        // Observe skills section
-        const skillsSection = document.querySelector('.skills-grid');
-        if (skillsSection) {
-            observer.observe(skillsSection.parentElement);
-        }
-
-        // Smoo
+      
