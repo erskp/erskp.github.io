@@ -3,21 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandeep Kumar - Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-<style>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        rel="stylesheet">
-  <style>
-    h1, h2, h3, p, a, li {
-      font-family: 'Montserrat', sans-serif;
-    }
-    .fa, .fas, .far, .fab {
-      font-family: 'Font Awesome 6 Free' !important;
-    }
-    .fab {
-      font-family: 'Font Awesome 6 Brands' !important;
-    }
+    <title>Your Name - Professional Profile</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -85,6 +74,26 @@
             color: white;
             position: relative;
             z-index: 1;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-image-link {
+            display: inline-block;
+            text-decoration: none;
         }
 
         .name {
@@ -101,6 +110,7 @@
             margin-bottom: 20px;
             position: relative;
             z-index: 1;
+            font-weight: 400;
         }
 
         .contact-info {
@@ -119,6 +129,7 @@
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .contact-item:hover {
@@ -173,6 +184,7 @@
             line-height: 1.8;
             color: #555;
             text-align: justify;
+            font-weight: 400;
         }
 
         .skills-grid {
@@ -299,6 +311,7 @@
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.3s ease;
+            font-weight: 400;
         }
 
         .skill-item:hover .skill-description {
@@ -337,6 +350,7 @@
             color: #666;
             margin-bottom: 20px;
             line-height: 1.6;
+            font-weight: 400;
         }
 
         .project-tech {
@@ -489,23 +503,28 @@
     <div class="container">
         <div class="profile-card">
             <div class="header">
-                <div class="profile-image">
-                    <i class="fas fa-user"></i>
-                </div>
-                <h1 class="name">Sandeep Kumar</h1>
-                <p class="title">Software Developer & Video Editor</p>
+                <a href="https://your-portfolio-link.com" class="profile-image-link" target="_blank">
+                    <div class="profile-image">
+                        <!-- Replace the src below with your actual profile photo URL -->
+                        <img src="https://via.placeholder.com/150x150/667eea/ffffff?text=Photo" alt="Your Name Profile Photo">
+                        <!-- Fallback icon if image doesn't load -->
+                        <i class="fas fa-user" style="display: none;"></i>
+                    </div>
+                </a>
+                <h1 class="name">Your Name</h1>
+                <p class="title">Full Stack Developer & UI/UX Designer</p>
                 <div class="contact-info">
-                    <a href="mailto: sandeepkumar.sce@gmail.com" class="contact-item">
+                    <a href="mailto:your.email@example.com" class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>sandeepkumar.sce@gmail.com</span>
+                        <span>your.email@example.com</span>
                     </a>
-                    <a href="tel:+919341831264" class="contact-item">
+                    <a href="tel:+1234567890" class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>+91 93418-31264</span>
+                        <span>+1 (234) 567-890</span>
                     </a>
-                    <a href="https://maps.app.goo.gl/dR7P5gsj4RrexjWC7" class="contact-item">
+                    <a href="https://your-location.com" class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>SEC Sasaram, Bihar [IN]</span>
+                        <span>Your City, Country</span>
                     </a>
                 </div>
             </div>
@@ -514,7 +533,10 @@
                 <div class="section">
                     <h2 class="section-title">About Me</h2>
                     <p class="about-text">
-                        Aspiring software engineer with a passion for building smart solutions and exploring the world of code. When not debugging or developing, I enjoy video editing as a creative outlet—blending tech with storytelling. Always curious, always learning.
+                        I'm a passionate Full Stack Developer with 5+ years of experience in creating beautiful, 
+                        functional web applications. I specialize in modern JavaScript frameworks, responsive design, 
+                        and user experience optimization. My goal is to bridge the gap between technical functionality 
+                        and creative design to deliver exceptional digital experiences.
                     </p>
                 </div>
 
@@ -593,179 +615,4 @@
                                 SQL and NoSQL databases, schema design, optimization, and data modeling
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h2 class="section-title">Featured Projects</h2>
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <h3 class="project-title">E-Commerce Platform</h3>
-                            <p class="project-description">
-                                A full-stack e-commerce solution with modern UI, payment integration, 
-                                and real-time inventory management.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                                <span class="tech-tag">Stripe</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class="fab fa-github"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <h3 class="project-title">Task Management App</h3>
-                            <p class="project-description">
-                                A collaborative task management application with real-time updates, 
-                                team collaboration features, and progress tracking.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Vue.js</span>
-                                <span class="tech-tag">Firebase</span>
-                                <span class="tech-tag">Tailwind</span>
-                                <span class="tech-tag">PWA</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class="fab fa-github"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <h3 class="project-title">Weather Dashboard</h3>
-                            <p class="project-description">
-                                A responsive weather application with location-based forecasts, 
-                                interactive maps, and beautiful data visualizations.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Chart.js</span>
-                                <span class="tech-tag">APIs</span>
-                                <span class="tech-tag">CSS Grid</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class="fab fa-github"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h2 class="section-title">Let's Connect</h2>
-                    <div class="social-links">
-                        <a href="https://github.com/yourusername" class="social-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/yourusername" class="social-link" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://dribbble.com/yourusername" class="social-link" target="_blank">
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                        <a href="mailto:your.email@example.com" class="social-link">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <button class="floating-btn" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script>
-        // Animate skill bars when they come into view
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-progress');
-                    skillBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 200);
-                    });
-                }
-            });
-        }, observerOptions);
-
-        // Observe skills section
-        const skillsSection = document.querySelector('.skills-grid');
-        if (skillsSection) {
-            observer.observe(skillsSection.parentElement);
-        }
-
-        // Smooth scrolling for floating button
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Show/hide floating button based on scroll position
-        window.addEventListener('scroll', () => {
-            const floatingBtn = document.querySelector('.floating-btn');
-            if (window.scrollY > 300) {
-                floatingBtn.style.opacity = '1';
-                floatingBtn.style.pointerEvents = 'auto';
-            } else {
-                floatingBtn.style.opacity = '0';
-                floatingBtn.style.pointerEvents = 'none';
-            }
-        });
-
-        // Add hover effects to project cards
-        const projectCards = document.querySelectorAll('.project-card');
-        projectCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-10px) scale(1.02)';
-            });
             
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Initialize floating button visibility
-        document.querySelector('.floating-btn').style.opacity = '0';
-        document.querySelector('.floating-btn').style.pointerEvents = 'none';
-
-        // Add loading animation
-        document.addEventListener('DOMContentLoaded', () => {
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 0.5s ease';
-                document.body.style.opacity = '1';
-            }, 100);
-        });
-    </script>
-</body>
-</html>
